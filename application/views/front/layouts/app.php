@@ -12,7 +12,7 @@
 	<link rel="stylesheet" href="<?= base_url() ?>assets/front/css/bootstrap.min.css">
 	<link rel="stylesheet" href="<?= base_url() ?>assets/front/css/style.css">
 	<link rel="icon" href="<?= base_url("images/favicon/$favicon->photo") ?>" type="image/png">
-	<title><?= $title ?> - Garsans</title>
+	<title><?= $title ?> - Ninews</title>
 	<!-- Bootstrap CSS -->
 	<link href="<?= base_url() ?>assets/front/css/bootstrap.css" rel="stylesheet">
 	<link href="<?= base_url() ?>assets/front/vendors/linericon/style.css" rel="stylesheet">
@@ -25,7 +25,7 @@
 	<!-- main css -->
 	<link href="<?= base_url() ?>assets/front/css/style.css" rel="stylesheet">
 
-	<title>Shahala</title>
+	<title>Ninews</title>
 </head>
 
 <body>

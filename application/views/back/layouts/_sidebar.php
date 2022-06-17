@@ -2,10 +2,7 @@
 
    <!-- Sidebar - Brand -->
    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url('admin') ?>">
-      <div class="sidebar-brand-icon">
-         <i class="fab fa-gofore"></i>
-      </div>
-      <div class="sidebar-brand-text mx-1">arsans Admin</div>
+      <div class=>Ninews Admin</div>
    </a>
 
    <!-- Divider -->

@@ -4,7 +4,7 @@
       <div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
       <div class="container">
          <div class="banner_content text-center">
-            <h2>ABOUT</h2>
+            <h2>NINEWS</h2>
          </div>
       </div>
    </div>
@@ -12,7 +12,7 @@
 <!--================End Home Banner Area =================-->
 
 <div class="row">
-   <div class="col-lg-6  mx-auto">
+   <div class="col-lg-7 mx-auto">
       <div class="container contact">
          <p>
             <?= $content->description ?>

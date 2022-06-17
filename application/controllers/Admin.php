@@ -13,6 +13,7 @@ class Admin extends CI_Controller
       $this->load->model('category_model', 'category', true);
       // $this->load->model('album_model', 'album', true);
       // $this->load->model('admin_model', 'admin', true);
+
    }
 
    public function index()
@@ -20,12 +21,23 @@ class Admin extends CI_Controller
       $data['title'] = 'Dashboard';
       $data['page'] = 'index';
       $data['total_posting'] = $this->my->countRows('posting');
+      $data['diterima'] = $this->my->getRow('posting');
+      $data['ditolak'] = $this->my->getRows('posting');
       $data['total_album'] = $this->my->countRows('album');
       $data['total_gallery'] = $this->my->countRows('gallery');
       $data['total_category'] = $this->my->countRows('category');
-      $data['total_banner'] = $this->my->countRows('banner');
+      $data['total_user'] = $this->my->countRows('users');
       // $data['chart'] = $this->admin->areaChart();
       $data['pageChart'] = '_chart';
+
+      $data['result'] = $this->db->get('posting')->result();
+
+      foreach ($data['result'] as $key => $value) {
+         $data['data'][$key]['title'] = $value->title;
+         $data['data'][$key]['date'] = $value->date;
+         $data['data'][$key]['backgroundColor'] = "#00a65a";
+      }
+
       $this->load->view('back/layouts/app', $data);
    }
 

@@ -69,13 +69,13 @@ a:hover, a:focus {
 body {
   line-height: 24px;
   font-size: 14px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Monospace", sans-serif;
   font-weight: normal;
   color: #777777;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Roboto", sans-serif;
+  font-family: "Monospace", sans-serif;
   font-weight: 500;
 }
 
@@ -130,7 +130,7 @@ button:focus {
 
 .main_title h2 {
   font-weight: bold;
-  font-family: "Roboto", sans-serif;
+  font-family: "Monospace", sans-serif;
   font-size: 36px;
   color: #222222;
   margin-bottom: 12px;
@@ -138,7 +138,7 @@ button:focus {
 
 .main_title p {
   font-size: 14px;
-  font-family: "Roboto", sans-serif;
+  font-family: "Monospace", sans-serif;
   font-weight: normal;
   line-height: 24px;
   color: #777777;

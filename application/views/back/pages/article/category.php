@@ -25,7 +25,7 @@
          <thead>
          <tr>
             <th>#</th>
-            <th>Nama Kategory</th>
+            <th>Nama Category</th>
             <th>Slug</th>
             <th>Aktif</th>
             <th>Action</th>

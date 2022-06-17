@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Admin - Garsansnews.com</title>
+  <title>Admin - Ninews</title>
 
   <!-- Font Awesome -->
   <link href="<?= base_url("assets/back/vendors/fontawesome-free/css/all.min.css") ?>" rel="stylesheet" type="text/css">
