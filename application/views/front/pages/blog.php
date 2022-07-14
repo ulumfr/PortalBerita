@@ -1,16 +1,16 @@
-<?php
-$url = $this->uri->segment(3);
+<?php 
+   $url = $this->uri->segment(3);
 
-if (isset($url)) {
-   $query = $this->db->where('slug', $url)->get('category')->row();
-   $title = "About " . $query->category_name;
-} else {
-   $title = '';
-}
+   if(isset($url)){
+      $query = $this->db->where('slug', $url)->get('category')->row();
+      $title = "About " . $query->category_name;
+   }else{
+      $title = '';
+   }
 ?>
 
 <!--================News Area =================-->
-<section class="news_area p_100 bg-light">
+<section class="news_area p_100">
    <div class="container">
       <div class="row">
          <div class="col-lg-8">
@@ -18,7 +18,7 @@ if (isset($url)) {
                <h2>All News <?= $title ?></h2>
             </div>
             <div class="latest_news">
-               <?php foreach ($post as $p) : ?>
+               <?php foreach($post as $p)  :?>
                   <div class="media">
                      <div class="d-flex">
                         <img class="img-fluid" src="<?= base_url("images/posting/medium/$p->photo") ?>" alt="">
@@ -47,10 +47,10 @@ if (isset($url)) {
                   <nav aria-label="Page navigation example">
                      <?= $pagination ?>
                   </nav>
-               </div>
+               </div> 
             </div>
             <!-- End of Pagination -->
-
+            
          </div>
          <!-- ================Sidebar================== -->
          <?php $this->load->view('front/layouts/_sidebar', $trending) ?>

@@ -38,11 +38,9 @@
                <p><?= $posting->content ?></p>
             </div>
          </div>
-         
          <!-- ================Sidebar================== -->
          <?php $this->load->view('front/layouts/_sidebar', $trending) ?>
          <!-- ================End of Sidebar================== -->
-
       </div>
    </div>
 </section>

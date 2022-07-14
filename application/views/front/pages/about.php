@@ -10,13 +10,14 @@
    </div>
 </section>
 <!--================End Home Banner Area =================-->
-
-<div class="row">
-   <div class="col-lg-7 mx-auto">
-      <div class="container contact">
+<div class="container">
+   <div class="row">
+      <div class="col-lg-8  mx-auto">
+         <div class="container contact">
          <p>
             <?= $content->description ?>
          </p>
+         </div>
       </div>
    </div>
 </div>
