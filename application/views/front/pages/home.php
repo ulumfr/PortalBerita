@@ -4,9 +4,7 @@
       <?php $no = 0; ?>
       <?php foreach ($featured as $f) : ?>
          <?php $no++;  ?>
-         <div class="carousel-item <?php if ($no <= 1) {
-                                       echo "active";
-                                    } ?> ">
+         <div class="carousel-item <?php if ($no <= 1) { echo "active"; } ?> ">
             <div class="row align-items-center my-5">
                <div class="col-lg-8">
                   <img class="img-fluid mb-4 mb-lg-0" src="<?= base_url("images/posting/$f->photo") ?>" alt="">
