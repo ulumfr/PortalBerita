@@ -81,7 +81,7 @@
             <div class="card-body">
                <div class="row no-gutters align-items-center">
                   <div class="col mr-2">
-                     <div class="text-s font-weight-bold text-danger text-uppercase mb-1">Postingan Diterima</div>
+                     <div class="text-s font-weight-bold text-danger text-uppercase mb-1">Postingan Aktif</div>
                      <div class="h5 mb-0 font-weight-bold text-gray-800">
                         <?= $diterima ?>
                      </div>
@@ -99,7 +99,7 @@
             <div class="card-body">
                <div class="row no-gutters align-items-center">
                   <div class="col mr-2">
-                     <div class="text-s font-weight-bold text-primary text-uppercase mb-1">Postingan Ditolak
+                     <div class="text-s font-weight-bold text-primary text-uppercase mb-1">Postingan Tidak Aktif
                      </div>
                      <div class="h mb-0 font-weight-bold text-gray-800">
                         <?= $ditolak ?>
@@ -120,7 +120,7 @@
    <div class="row">
 
       <!-- Area Chart -->
-      
+
       <div class="col-xl-12 col-lg-12">
          <div class="card shadow mb-4">
             <!-- Card Header - Dropdown -->
@@ -130,7 +130,7 @@
             <!-- Card Body -->
             <div class="card-body">
                <div class="chart-area">
-                  <canvas id="myAreaChart" height="100vh"></canvas>
+                  <canvas id="myAreaChart" height="83vh"></canvas>
                   <div id="calendar"></div>
 
                </div>

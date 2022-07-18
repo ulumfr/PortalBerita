@@ -5,10 +5,10 @@ $navbar   = $this->category->getCategory();
 $category = $this->uri->segment(3);
 ?>
 
-<nav class="navbar navbar-light navbar-expand-lg navbar-light fixed-top home" style="background: linear-gradient(to right, #FAD4D4, #fff)">
+<nav class="navbar navbar-light navbar-expand-lg navbar-light fixed-top home" style="background-color: #FAD4D4">
    <div class="container">
       <a href="<?= base_url() ?>" class="navbar-brand d-flex w-50 mr-auto">
-         <img src="<?= base_url('images/brand/red2.png') ?>" alt="Logo">
+         <img src="<?= base_url('images/brand/red.png') ?>" alt="Logo">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar3">
           <span class="navbar-toggler-icon"></span>

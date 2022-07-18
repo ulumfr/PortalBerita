@@ -2,7 +2,7 @@
 
    <!-- Sidebar - Brand -->
    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url('admin') ?>">
-      <img src="<?= base_url('images/brand/admin.png') ?>" alt="Logo">
+      <div class=>Ninews Admin</div>
    </a>
 
    <!-- Divider -->

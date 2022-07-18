@@ -1,7 +1,8 @@
-<?php 
-defined('BASEPATH') OR exit('No direct script access allowed');
+<?php
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Posting_model extends CI_Model {
+class Posting_model extends CI_Model
+{
 
    public $perPage = 5;
 
@@ -16,16 +17,6 @@ class Posting_model extends CI_Model {
       return $this->db->get()->result();
    }
 
-   public function getThread()
-   {
-      $this->db->from('posting');
-      $this->db->join('category', 'category.id = posting. id_category');
-      $this->db->where('thread', 'Y');
-      $this->db->where('posting.is_active', 'Y');
-      $this->db->order_by('posting.id', 'desc');
-      $this->db->limit(4);
-      return $this->db->get()->result();
-   }
 
    public function getFeatured()
    {
@@ -37,7 +28,7 @@ class Posting_model extends CI_Model {
       $this->db->limit(3);
       return $this->db->get()->result();
    }
-  
+
    public function getLastNews()
    {
       $this->db->from('posting');
@@ -49,6 +40,17 @@ class Posting_model extends CI_Model {
    }
 
    public function getMostPopular()
+   {
+      $this->db->from('posting');
+      $this->db->join('category', 'category.id = posting. id_category');
+      $this->db->where('thread', 'Y');
+      $this->db->where('posting.is_active', 'Y');
+      $this->db->order_by('posting.id', 'desc');
+      $this->db->limit(4);
+      return $this->db->get()->result();
+   }
+
+   public function getMostPopular1()
    {
       $this->db->from('posting');
       $this->db->join('category', 'category.id = posting. id_category');
@@ -69,7 +71,7 @@ class Posting_model extends CI_Model {
       $this->db->limit(5);
       return $this->db->get()->result();
    }
-   
+
    public function getAllPosting($page)
    {
       $this->db->from('posting');
@@ -109,12 +111,12 @@ class Posting_model extends CI_Model {
 
    public function countPosting($category = null)
    {
-      if($category){
+      if ($category) {
          $idCategory = $this->_getIdCategory($category);
          $this->db->where('id_category', $idCategory->id);
       }
 
-      $this->db->where('posting.is_active', 'Y');  
+      $this->db->where('posting.is_active', 'Y');
       return $this->db->count_all_results('posting');
    }
 
@@ -140,49 +142,54 @@ class Posting_model extends CI_Model {
       ];
    }
 
-   public function uploadImage(){
+   public function uploadImage()
+   {
 
       $config = [
-        'upload_path'     => './images/posting',
-        'encrypt_name'    => TRUE,
-        'allowed_types'   => 'jpg|jpeg|gif|png|JPG|PNG',
-        'max_size'        => 1000,
-        'max_width'       => 0,
-        'max_height'      => 0,
-        'overwrite'       => TRUE,
-        'file_ext_tolower'=> TRUE
+         'upload_path'     => './images/posting',
+         'encrypt_name'    => TRUE,
+         'allowed_types'   => 'jpg|jpeg|gif|png|JPG|PNG',
+         'max_size'        => 1000,
+         'max_width'       => 0,
+         'max_height'      => 0,
+         'overwrite'       => TRUE,
+         'file_ext_tolower' => TRUE
       ];
-  
+
       $this->load->library('upload', $config);
-  
-      if(!$this->upload->do_upload('photo')){
-        $data['error_string'] = 'Upload error: '.$this->upload->display_errors('',''); 
-        exit();
+
+      if (!$this->upload->do_upload('photo')) {
+         $data['error_string'] = 'Upload error: ' . $this->upload->display_errors('', '');
+         exit();
       }
       return $this->upload->data('file_name');
    }
-  
-   public function deleteImage($fileName){
-      if(file_exists("./images/posting/$fileName")){
-        unlink("./images/posting/$fileName");
+
+   public function deleteImage($fileName)
+   {
+      if (file_exists("./images/posting/$fileName")) {
+         unlink("./images/posting/$fileName");
       }
    }
 
-   public function paginate($page){
+   public function paginate($page)
+   {
       return  $this->db->limit($this->perPage, $this->calculateRealOffset($page));
    }
-  
-   public function calculateRealOffset($page){
-      if(is_null($page) || empty($page)){
+
+   public function calculateRealOffset($page)
+   {
+      if (is_null($page) || empty($page)) {
          $offset = 0;
-      }else{
+      } else {
          $offset = ($page * $this->perPage) - $this->perPage;
       }
-      
+
       return $offset;
    }
-  
-   public function makePagination($baseUrl, $uriSegment, $totalRows = null){
+
+   public function makePagination($baseUrl, $uriSegment, $totalRows = null)
+   {
       $this->load->library('pagination');
 
       $config = [
@@ -191,10 +198,10 @@ class Posting_model extends CI_Model {
          'per_page'            => $this->perPage,
          'total_rows'          => $totalRows,
          'use_page_numbers'    => true,
-         
+
          'full_tag_open'       => '<ul class="pagination justify-content-center">',
          'full_tag_close'      => '</ul>',
-         
+
          'attributes'          => ['class' => 'page-link text-danger'],
          'first_link'          => false,
          'last_link'           => false,
@@ -207,7 +214,7 @@ class Posting_model extends CI_Model {
          'next_tag_open'       => '<li class="page-item">',
          'next_tag_close'      => '</li>',
          'last_tag_open'       => '<li class="page-item">',
-         'last_tag_close'      => '</li>', 
+         'last_tag_close'      => '</li>',
          'cur_tag_open'        => '<li class="page-item danger"><a href="#" class="page-link text-white">',
          'cur_tag_close'       => '<span class="sr-only">(current)</span></a></li>',
          'num_tag_open'        => '<li class="page-item">',
@@ -217,7 +224,6 @@ class Posting_model extends CI_Model {
       $this->pagination->initialize($config);
       return $this->pagination->create_links();
    }
-
 }
 
 /* End of file Category_model.php */

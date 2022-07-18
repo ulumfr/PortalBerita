@@ -11,7 +11,9 @@
                   <a class="gad_btn" href="<?= base_url("blog/category/$popular->slug") ?>"><?= $popular->category_name ?></a>
                   <a href="#" class="float-right"><i class="fa fa-calendar" aria-hidden="true"></i><?= mediumdate_indo($popular->date) ?></a>
                </div>
-               <a href="<?= base_url("blog/read/$popular->seo_title") ?>"><h4><?= $popular->title ?></h4></a>
+               <a href="<?= base_url("blog/read/$popular->seo_title") ?>">
+                  <h4><?= $popular->title ?></h4>
+               </a>
                <p><?= character_limiter($popular->content, 70) ?></p>
             </div>
          </div>

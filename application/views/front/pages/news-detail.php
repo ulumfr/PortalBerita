@@ -39,10 +39,9 @@
             </div>
          </div>
          <!-- ================Sidebar================== -->
-         <?php $this->load->view('front/layouts/_sidebar', $trending) ?>
+         <?php $this->load->view('front/layouts/_sidebar') ?>
          <!-- ================End of Sidebar================== -->
       </div>
    </div>
 </section>
 <!--================End News Area =================-->
-	
