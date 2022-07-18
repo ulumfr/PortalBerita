@@ -4,7 +4,11 @@
 <br />
 <div align="center">
   <a href="https://github.com/ulumfr/PortalBerita">
+<<<<<<< HEAD
     <img src="images/brand/red.png" alt="Logo">
+=======
+    <img src="images/brand/red2.png" alt="Logo">
+>>>>>>> 1457144de5578cb322654eddd735215d283aa170
   </a>
 
   <h3 align="center">Ninews</h3>
