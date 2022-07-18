@@ -11,9 +11,8 @@ class Admin extends CI_Controller
       $this->load->model('my_model', 'my', true);
       $this->load->model('menu_model', 'menu', true);
       $this->load->model('category_model', 'category', true);
-      // $this->load->model('album_model', 'album', true);
-      // $this->load->model('admin_model', 'admin', true);
-
+      $this->load->model('album_model', 'album', true);
+      $this->load->model('admin_model', 'admin', true);
    }
 
    public function index()
@@ -27,7 +26,7 @@ class Admin extends CI_Controller
       $data['total_gallery'] = $this->my->countRows('gallery');
       $data['total_category'] = $this->my->countRows('category');
       $data['total_user'] = $this->my->countRows('users');
-      // $data['chart'] = $this->admin->areaChart();
+      $data['chart'] = $this->admin->areaChart();
       $data['pageChart'] = '_chart';
 
       $data['result'] = $this->db->get('posting')->result();
